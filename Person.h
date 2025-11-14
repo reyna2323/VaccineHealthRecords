@@ -28,7 +28,6 @@ class Adult :: public Person {
         bool shingles;
     public:
         Adult(string name, int age) :: Person(name, age);
-        shingles = false;
 }
         
 
