@@ -29,7 +29,7 @@ class Adult :: public Person {
     public:
         Adult(string name, int age) :: Person(name, age);
         shingles = false;
-        
+}
         
 
 #endif
