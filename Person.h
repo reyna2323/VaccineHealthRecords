@@ -3,23 +3,33 @@
 
 #include <string>
 #include <vector>
+using namespace std
 
 class Person
 {
 public:
     Person();
-    Person(std::string name, int age);
+    Person(string name, int age);
 
-    virtual void displayRecord() const;      
-    void addVaccine(std::string vaccine);    
+    void displayRecord() const;      
+    void addVaccine(string vaccine);    
 
     std::string getName() const;
     int getAge() const;
 
 protected:
-    std::string name;
+    string name;
     int age;
-    std::vector<std::string> vaccines;
+    vector<string> vaccines;
 };
+
+class Adult :: public Person {
+    private:
+        bool shingles;
+    public:
+        Adult(string name, int age) :: Person(name, age);
+        shingles = false;
+        
+        
 
 #endif
