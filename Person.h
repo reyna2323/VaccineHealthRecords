@@ -3,7 +3,7 @@
 
 #include <string>
 #include <vector>
-using namespace std
+using namespace std;
 
 class Person
 {
@@ -11,10 +11,10 @@ public:
     Person();
     Person(string name, int age);
 
-    void displayRecord() const;      
-    void addVaccine(string vaccine);    
+    virtual void displayRecord() const; 
+    void addVaccine(string vaccine);
 
-    std::string getName() const;
+    string getName() const;
     int getAge() const;
 
 protected:
@@ -23,12 +23,28 @@ protected:
     vector<string> vaccines;
 };
 
-class Adult :: public Person {
-    private:
-        bool shingles;
-    public:
-        Adult(string name, int age) :: Person(name, age);
-}
-        
+class Adult : public Person
+{
+public:
+    Adult();
+    Adult(string name, int age);
+
+    void displayRecord() const override; 
+
+private:
+    bool shingles;
+};
+
+class Child : public Person
+{
+public:
+    Child();
+    Child(string name, int age);
+
+    void displayRecord() const override;
+
+private:
+    bool needsFluShot;
+};
 
 #endif
